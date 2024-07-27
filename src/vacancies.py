@@ -1,83 +1,99 @@
-import requests
 from abc import ABC, abstractmethod
-class Parser(ABC):
-    """Абстрактный класс для работы с вакансиями."""
+from api import HH
+import json
+import os
 
-    @abstractmethod
-    def load_vacancies(self,keyword):
-        pass
-
-    import requests
-
-class HH(Parser):
-        """
-        Класс для работы с API HeadHunter
-        Класс Parser является родительским классом, который вам необходимо реализовать
-        """
-
-        def __init__(self, file_worker):
-            self.url = 'https://api.hh.ru/vacancies'
-            self.headers = {'User-Agent': 'HH-User-Agent'}
-            self.params = {'text': '', 'page': 0, 'per_page': 100}
-            self.vacancies = []
-            super().__init__(file_worker)
-
-        def load_vacancies(self, keyword):
-            self.params['text'] = keyword
-            while self.params.get('page') != 20:
-                response = requests.get(self.url, headers=self.headers, params=self.params)
-                vacancies = response.json()['items']
-                self.vacancies.extend(vacancies)
-                self.params['page'] += 1
-
-
-    # @abstractmethod
-    # def get_vacancies(self):
-    #     """Получает вакансии"""
-    #
-    #
-    # @abstractmethod
-    # def save_vacancies_to_file(self, vacancies, filename):
-    #     """Сохраняет вакансии в файл"""
-    #
-    #
-    # @abstractmethod
-    # def load_vacancies_from_file(self, filename, criteria=None):
-    #     """Загружает список вакансий из файла по заданным критериям."""
-    #
-    #
-    # @abstractmethod
-    # def delete_vacancies_from_file(self, filename, criteria=None):
-    #     """Удаляет информацию о вакансиях из файла по заданным критериям."""
-
-
-
-class HhVacancy(Vacancy):
-    """Класс для работы с API HeadHunter."""
-
-    def init(self, api):
-        self.api = api
-
-    def get_vacancies(self):
-        """Получает список вакансий"""
-
-    def save_vacancies_to_file(self, vacancies, filename):
-        """Сохраняет список вакансий в JSON-файл."""
-
-
-
-
-    def delete_vacancies_from_file(self, filename, criteria):
-        """Удаляет информацию о вакансиях из JSON-файла по заданным критериям."""
-
-
-class VacancyInfo:
+class Vacancy:
     """Класс для представления информации о вакансии."""
 
-    def init(self, title, link, salary, description, requirements):
+    def __init__(self, title:str, link:str, salary:int, description:str, requirements:str):
         self.title = title
         self.link = link
         self.salary = salary if salary else "Зарплата не указана"
         self.description = description
         self.requirements = requirements
+
+    def __eq__(self, other):
+        """ метод сравнения вакансий с равной зарплатой"""
+        if isinstance(other, Vacancy):
+            return self.salary == other.salary
+        return False
+
+    def __lt__(self, other):
+        """ метод сравнения вакансий с меньшей зарплатой"""
+        if isinstance(other, Vacancy):
+            return self.salary < other.salary
+        return False
+
+    def __str__(self):
+        """Представление информации о вакансии в виде строки."""
+        return f"Vacancy(title={self.title}, link={self.link}, salary={self.salary}, description={self.description}, requirements={self.requirements})"
+
+    def add_vacancy(self,file_path):
+        """добавляет вакансию в файл"""
+        vac = {
+            "title": self.title,
+            "link": self.link,
+            "salary": self.salary,
+            "description": self.description,
+            "requirements": self.requirements
+        }
+        if not os.path.exists(file_path):
+            with open(file_path, 'w', encoding="utf-8") as f:
+                json.dump([], f)
+        with open(file_path, 'r', encoding="utf-8") as f:
+            vacancies = json.load(f)
+        vacancies.append(vac)
+        with open(file_path, 'w', encoding="utf-8") as f:
+            json.dump(vacancies, f, indent=4)
+        print(f"Вакансия добавлена") #добавить название вакансии!
+
+    def delete_vacancy(self, file_path, title):
+            """Удаляет вакансию с указанным заголовком из файла"""
+            if not os.path.exists(file_path):
+                print("Файл не найден.")
+                return
+            with open(file_path, 'r', encoding="utf-8") as f:
+                vacancies = json.load(f)
+            vacancies = [vacancy for vacancy in vacancies if vacancy["title"] != title]
+
+            with open(file_path, 'w', encoding="utf-8") as f:
+                json.dump(vacancies, f, indent=4)
+            print(f"Вакансия '{title}' удалена из файла.")
+
+    def get_vacancies_by_criteria(vacancies, criteria):
+        """отбирает вакансии по ключевым словам в описании"""
+        return [v for v in vacancies if v.description and any(word in v.description.lower() for word in criteria)]
+
+    # def save_vacancies(self):
+    #     """ сохраняет вакансии в файл """
+    #     with open(self.file_path, 'w', encoding="utf-8") as f:
+    #         json.dump(self.vacancies, f, indent=4)
+
+
+class VacancyFile(ABC):
+    """Класс для работы с файлом"""
+    @abstractmethod
+    def add_vacancy(self, vacancy: Vacancy):
+        pass
+
+    @abstractmethod
+    def get_vacancies_by_criteria(self, filename,criteria):
+        pass
+
+    @abstractmethod
+    def delete_vacancy(self, vacancy: Vacancy):
+        pass
+
+# hh = HH()
+# hh.get_vacancies("python")
+# print(hh.vacancies)
+
+vacancy = Vacancy("jgg","hjn",12,"jhg","jg")
+vacancy1 = Vacancy("jhhgf","kyf",60, "hg","jgf")
+vacancy2 = Vacancy("khg","jg",90,"khg","jgfg")
+vacancy.add_vacancy("kjm.json")
+vacancy1.add_vacancy("kjm.json")
+vacancy2.add_vacancy("kjm.json")
+vacancy2.delete_vacancy("kjm.json","khg")
 
