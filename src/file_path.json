@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Программист",
+        "link": "http://example.com/job1",
+        "salary": 60000,
+        "description": "Разработка приложений на Python",
+        "requirements": "Опыт работы 2 года"
+    },
+    {
+        "title": "Дизайнер",
+        "link": "http://example.com/job3",
+        "salary": 55000,
+        "description": "Дизайн интерфейсов",
+        "requirements": "Навыки работы с Figma"
+    }
+]
