@@ -3,6 +3,7 @@ import json
 from json import JSONDecodeError
 from src.vacancies import Vacancy
 import os
+from utils import get_top_vacancies
 
 class Saver(ABC):
     """Абстрактный класс для работы с файлом"""
@@ -65,6 +66,17 @@ class JSONsaver(Saver):
                         break
         return filtered_vacancies
 
+    def get_vacancies_by_salary(self, salary_range):
+        start,stop = salary_range
+        filtered_vacancies = []
+        for vacancy in self.vacancies:
+            salary = vacancy['salary']
+            if salary >= start and salary <= stop:
+                vacancy = Vacancy(vacancy['title'], vacancy['link'], vacancy['salary'], vacancy['description'], vacancy['requirements'])
+                filtered_vacancies.append(vacancy)
+        return filtered_vacancies
+
+
     def _load_vacancies(self):
         try:
             with open(self.file_path, 'r') as file:
@@ -84,15 +96,24 @@ vacancy = Vacancy("Программист","http://example.com/job1",60000,"Ра
 vacancy1 = Vacancy("Аналитик", "http://example.com/job2", 50000, "Анализ данных", "Знание SQL")
 vacancy2 = Vacancy("Дизайнер", "http://example.com/job3", 55000, "Дизайн интерфейсов", "Навыки работы с Figma")
 
-jsonsaver.add_vacancy(vacancy)
-jsonsaver.add_vacancy(vacancy1)
+# jsonsaver.add_vacancy(vacancy)
+# jsonsaver.add_vacancy(vacancy1)
+# #
+# jsonsaver.delete_vacancy("Аналитик")
+# jsonsaver.add_vacancy(vacancy2)
+#
+# vacancies = [vacancy, vacancy1, vacancy2]
+# keyword = "интерфейс"
+# filtered_vacancies = jsonsaver.get_vacancies_by_keywords(keyword)
+# print("Отфильтрованные вакансии:")
+# for vacancy in filtered_vacancies:
+#     print(vacancy['title'])
 
-jsonsaver.delete_vacancy("Аналитик")
-jsonsaver.add_vacancy(vacancy2)
-
-vacancies = [vacancy, vacancy1, vacancy2]
-keyword = "интерфейс"
-filtered_vacancies = jsonsaver.get_vacancies_by_keywords(keyword)
+salary = (30000, 100000)
+filtered_vacancies = sorted(jsonsaver.get_vacancies_by_salary(salary),reverse=True)
+print(len(filtered_vacancies))
+top_vacancies = get_top_vacancies(filtered_vacancies,3)
+print(len(top_vacancies))
 print("Отфильтрованные вакансии:")
-for vacancy in filtered_vacancies:
-    print(vacancy['title'])
+for vacancy in top_vacancies:
+    print(vacancy.title, vacancy.salary)

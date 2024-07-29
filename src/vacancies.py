@@ -36,7 +36,5 @@ class Vacancy:
 
 
 
-# hh = HH()
-# hh.get_vacancies("python")
-# print(hh.vacancies)
+
 
