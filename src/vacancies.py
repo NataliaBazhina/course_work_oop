@@ -1,4 +1,3 @@
-import json
 
 class Vacancy:
     """Класс для представления информации о вакансии."""
@@ -25,16 +24,6 @@ class Vacancy:
     def __str__(self):
         """Представление информации о вакансии в виде строки."""
         return f"Vacancy(title={self.title}, link={self.link}, salary={self.salary}, description={self.description}, requirements={self.requirements})"
-
-
-
-    def save_vacancies(self):
-        """ сохраняет вакансии в файл """
-        with open(self.file_path, 'w', encoding="utf-8") as f:
-            json.dump(self.vacancies, f, ensure_ascii=False, indent=4)
-
-
-
 
 
 
