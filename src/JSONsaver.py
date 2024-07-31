@@ -70,11 +70,15 @@ class JSONsaver(Saver):
         start,stop = salary_range
         filtered_vacancies = []
         for vacancy in self.vacancies:
-            salary = vacancy['salary']
+            try:
+                salary = int(vacancy['salary'])
+            except ValueError:
+                salary = 0
             if int(start) <= salary <= int(stop):
                 vacancy = Vacancy(vacancy['title'], vacancy['link'], vacancy['salary'], vacancy['description'], vacancy['requirements'])
                 filtered_vacancies.append(vacancy)
         return filtered_vacancies
+
 
 
     def _load_vacancies(self):

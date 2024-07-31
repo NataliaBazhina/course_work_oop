@@ -5,7 +5,7 @@ class Vacancy:
     def __init__(self, title:str, link:str, salary:int, description:str, requirements:str):
         self.title = title
         self.link = link
-        self.salary = salary if salary else "Зарплата не указана"
+        self.salary = salary if salary else 0
         self.description = description
         self.requirements = requirements
 
