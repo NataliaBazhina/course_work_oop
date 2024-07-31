@@ -1,4 +1,4 @@
-from api import HH
+from src.api import HH
 from src.utils import get_top_vacancies
 from src.JSONsaver import JSONsaver
 

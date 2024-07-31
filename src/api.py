@@ -22,7 +22,7 @@ class HH(Parser):
         self.headers = {'User-Agent': 'HH-User-Agent'}
         self.params = {'text': '', 'page': 0, 'per_page': 1}
         self.vacancies = []
-        self.json_saver = JSONsaver('file.json')
+        self.json_saver = JSONsaver('../file.json')
 
 
 

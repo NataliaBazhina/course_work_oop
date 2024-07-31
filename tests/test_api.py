@@ -1,4 +1,4 @@
-from api import HH
+from src.api import HH
 def test_get_vacancies():
     hh_parser = HH()
     hh_parser.get_vacancies('Software Engineer')

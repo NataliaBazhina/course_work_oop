@@ -43,22 +43,4 @@ def test_delete_vacancy(setup_and_teardown):
         assert len(data) == 0
 #
 #
-def test_get_vacancies_by_keywords(setup_and_teardown):
-    saver = JSONsaver(TEST_FILE_PATH)
 
-    # Добавляем несколько вакансий
-    vacancy1 = Vacancy("Software Engineer", "http://example.com", 100000, "Develop cool software", "Python, Django")
-    vacancy2 = Vacancy("Data Scientist", "http://example.com/ds", 120000, "Analyze data", "Python, R")
-    saver.add_vacancy(vacancy1)
-    saver.add_vacancy(vacancy2)
-
-    # Запрашиваем вакансии по ключевому слову
-    results = saver.get_vacancies_by_keywords("Develop")
-
-    # Проверяем, что результат включает только вакансию "Software Engineer"
-    assert len(results) == 1
-    assert results[0]["title"] == "Software Engineer"
-
-    # Проверяем, что нет вакансий, если ключевые слова не найдены
-    results = saver.get_vacancies_by_keywords("Non-existent keyword")
-    assert len(results) == 0

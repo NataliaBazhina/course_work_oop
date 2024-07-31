@@ -1,9 +1,0 @@
-[
-    {
-        "title": "Программист",
-        "link": "http://example.com/vacancy1",
-        "salary": 100000,
-        "description": "Описание вакансии 1",
-        "requirements": "Требования 1",
-        "file_path": "vacancies.json",
-        "vacancies": 

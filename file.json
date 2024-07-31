@@ -2637,5 +2637,145 @@
         "salary": "Зарплата не указана",
         "description": null,
         "requirements": "Базовые знания HTML, CSS и JavaScript. Опыт работы с фреймворками (React, Vue.js, Angular) будет плюсом. Понимание принципов адаптивного дизайна. "
+    },
+    {
+        "title": "Junior программист Python",
+        "link": "https://hh.ru/vacancy/103110598",
+        "salary": "Зарплата не указана",
+        "description": "Поддержка микросервисов. Разработка интеграций с внешними и внутренними сервисами. Участие в разработке моделей по прогнозированию.",
+        "requirements": "Уверенное знание Python. Уверенное знание SQL(PSQL, MSSQL). Умение работать с FastAPI. Умение работать с Git. Знание SQLAlchemy. "
+    },
+    {
+        "title": "Senior JavaScript Developer (React + MobX)",
+        "link": "https://hh.ru/vacancy/98449274",
+        "salary": "Зарплата не указана",
+        "description": "Работа в команде, менторство над начинающими, взаимодействие с другими <highlighttext>разработчиками</highlighttext>. Самостоятельное решение задач. Приносить в проект свой опыт, чтобы помочь...",
+        "requirements": "Обязателен практический опыт с React + Mobx. Активная практика работы c JavaScript (ES6+) в последний год (ООП, контекст..."
+    },
+    {
+        "title": "React Frontend Разработчик",
+        "link": "https://hh.ru/vacancy/104950770",
+        "salary": "Зарплата не указана",
+        "description": null,
+        "requirements": "Отличное владение JavaScript, включая манипуляцию DOM и объектную модель JavaScript. Глубокое понимание React.js и его основных принципов. Опыт работы с..."
+    },
+    {
+        "title": "Frontend-разработчик (React)",
+        "link": "https://hh.ru/vacancy/97326838",
+        "salary": "Зарплата не указана",
+        "description": "Разработка frontend-части информационной системы, решение задач проекта.",
+        "requirements": "Знание HTML, CSS. JavaScript, TypeScript. React. Redux (как вариант: MobX, useContext). Понимание требований и опыт кросс-браузерной / адаптивной верстки. "
+    },
+    {
+        "title": "Разработчик .NET(Middle/Senior)",
+        "link": "https://hh.ru/vacancy/50699740",
+        "salary": "Зарплата не указана",
+        "description": "Развитие, доработка и оптимизация высоконагруженных банковских систем.",
+        "requirements": "Опыт работы от 4 лет со стеком технологий: C#, .Net Core, .Net Framework, MS SQL, Kafka, Redis, Rabbit MQ, Camunda..."
+    },
+    {
+        "title": "Frontend разработчик (React.js)",
+        "link": "https://hh.ru/vacancy/104872088",
+        "salary": "Зарплата не указана",
+        "description": null,
+        "requirements": "Умение работать и настраивать сборщики (Webpack). Умение делать кросс браузерную адаптивную верстку (HTML5, CSS3, Sass, будет плюсом знание..."
+    },
+    {
+        "title": "Frontend-разработчик",
+        "link": "https://hh.ru/vacancy/104970095",
+        "salary": "Зарплата не указана",
+        "description": "Работать и взаимодействовать в команде, помогать друг другу. Взаимодействовать с дизайнерами и <highlighttext>разработчиками</highlighttext> других команд (web, smart tv, ios/tvos...",
+        "requirements": "Хорошее знание JavaScript. Знакомство с Git, TypeScript и одним из популярных фронтенд фреймворков (React, Vue и тд). Английский на уровне..."
+    },
+    {
+        "title": "Frontend разработчик",
+        "link": "https://hh.ru/vacancy/104788182",
+        "salary": "Зарплата не указана",
+        "description": "Разработка веб интерфейса сервиса. Написание end-to-end тестов для веб интерфейса.",
+        "requirements": "Уверенная работа с Vue (2, 3). Уверенная работа с Bootstrap (4, 5). Опыт написания ent-to-end тестов для веб..."
+    },
+    {
+        "title": "Junior Web Developer",
+        "link": "https://hh.ru/vacancy/104916257",
+        "salary": "Зарплата не указана",
+        "description": "Разработка новых пользовательских интерфейсов с использованием React. Поддержка и оптимизация существующих веб-приложений. Взаимодействие с командой <highlighttext>разработчиков</highlighttext> для обсуждения и...",
+        "requirements": "Знание основ веб-разработки (HTML, CSS, JavaScript). Опыт работы с React и понимание его основных принципов. Знание работы с Github. "
+    },
+    {
+        "title": "Frontend-разработчик",
+        "link": "https://hh.ru/vacancy/104963137",
+        "salary": "Зарплата не указана",
+        "description": null,
+        "requirements": "Опыт работы фронтенд <highlighttext>разработчиком</highlighttext> от 4 лет. -Отличное знание HTML5, CSS3 и JavaScript (ES6+), TypeScript. -"
+    },
+    {
+        "title": "Frontend-разработчик (React) RM",
+        "link": "https://hh.ru/vacancy/99859946",
+        "salary": "Зарплата не указана",
+        "description": "Разработка frontend для web приложений. Поддержка существующего функционала. Code-review. Анализ требований.",
+        "requirements": "Опыт коммерческой разработки от 2-х лет. Адаптивная и кросс-браузерная верстка (HTML5, CSS3, препроцессоры SASS/SCSS). "
+    },
+    {
+        "title": "Frontend-разработчик (JS\\React)",
+        "link": "https://hh.ru/vacancy/104948168",
+        "salary": "Зарплата не указана",
+        "description": "Доработка ключевых разделов сайта: Ленты, Записей, Комментариев. Взаимодействие с другими участниками: дизайнерами, мобильными и backend-<highlighttext>разработчиками</highlighttext>.",
+        "requirements": "Знаете серверные языки на базовом уровне или готовы их изучить. Разрабатывали на React или аналогах, знакомы с Vanilla JS. "
+    },
+    {
+        "title": "Младший программист 1C",
+        "link": "https://hh.ru/vacancy/90133143",
+        "salary": "Зарплата не указана",
+        "description": "Программирование продуктов на базе 1С. Участие в доработке конфигурации под нужды компании и специфику деятельности. Разработка дополнительных функций и...",
+        "requirements": "Опыт программирования конфигураций 1С 8.2-8.3. Умение ориентироваться в чужом коде (поиск ошибок, оптимизация кода, запросов). "
+    },
+    {
+        "title": "Разработчик фронтэнда React JS",
+        "link": "https://hh.ru/vacancy/104748439",
+        "salary": "Зарплата не указана",
+        "description": "Build user-facing products that create seamless experiences. Design, build, and maintain our React application. Work with product managers, user...",
+        "requirements": "At least 1 year of experience in front-end <highlighttext>development</highlighttext> of building, running, and debugging web applications using modern JS..."
+    },
+    {
+        "title": "Frontend Developer",
+        "link": "https://hh.ru/vacancy/104590695",
+        "salary": "Зарплата не указана",
+        "description": "<highlighttext>Develop</highlighttext> and maintain reusable, accessible React components based on Figma designs. Ensure all components are fully compliant with WAI-ARIA...",
+        "requirements": "Proven experience with React. Strong understanding of web accessibility standards (WAI-ARIA) and best practices. Proficiency in CSS, including Flexbox..."
+    },
+    {
+        "title": "Junior Python Developer",
+        "link": "https://hh.ru/vacancy/104857154",
+        "salary": "Зарплата не указана",
+        "description": "Unit-тесты. - Написание нового и поддержка легаси кода. - Оптимизация ORM-запросов. - Написание unit-тестов.",
+        "requirements": "Базовые знания Python версии 3.7-3.11. - Базовые знания Django и Django REST framework (умение написать Middleware а также..."
+    },
+    {
+        "title": "Junior Telegram ( Python ) Developer",
+        "link": "https://hh.ru/vacancy/104834587",
+        "salary": 40000,
+        "description": "Поддержка и улучшение уже разработанных продуктов. Участие в разработке новых продуктов с нуля, помощь в их написании. Ежедневная коммуникация и...",
+        "requirements": "Знание Python на уровне Junior. Базовые знания SQL и умение работать с базами данных. Понимание принципов работы Rest API. "
+    },
+    {
+        "title": "Frontend-разработчик",
+        "link": "https://hh.ru/vacancy/104922354",
+        "salary": "Зарплата не указана",
+        "description": "Проектирование и разработка UI для работы с сервисами. Разработка новых фич в проектах. Участие в разборе дефектов, выявленных на этапе...",
+        "requirements": "Опыт коммерческой разработки на React от 4-х лет. Уверенное знание JavaScript, TypeScript. Понимание архитектуры и работы веб-приложений. "
+    },
+    {
+        "title": "Middle Frontend Developer (React)",
+        "link": "https://hh.ru/vacancy/104880694",
+        "salary": "Зарплата не указана",
+        "description": "Разработкой новой функциональности front-end части. Рефакторингом и оптимизацией существующей функциональности продуктов компании. Анализом требований, проектированием решений совместно с командой.",
+        "requirements": "Коммерческий опыт разработки от 2-х лет. Умение писать чистый, оптимизированный код. Знание и понимание принципов ООП. Уверенные знания JavaScript..."
+    },
+    {
+        "title": "Разработчик Java",
+        "link": "https://hh.ru/vacancy/104927838",
+        "salary": 100000,
+        "description": "Проектирование и реализация крупных корпоративных решений. Создание модульных и интеграционных тестов и сценариев тестирования. Активное участие в планировании и развитии...",
+        "requirements": "Уверенные знания Core Java (Collections Framework, I/O, Exceptions). Понимание основ многопоточного программирования (синхронизация, блокировки, потокобезопасные операции и типы данных). "
     }
 ]
