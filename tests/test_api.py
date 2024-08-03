@@ -1,5 +1,6 @@
 from src.api import HH
 def test_get_vacancies():
+    """ тест, проверки метода получения вакансий"""
     hh_parser = HH()
     hh_parser.get_vacancies('Software Engineer')
     assert len(hh_parser.vacancies) > 0, "Должно быть найдено хотя бы одно объявление о вакансии"

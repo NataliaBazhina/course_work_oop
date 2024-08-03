@@ -4,6 +4,7 @@ from src.JSONsaver import JSONsaver
 
 
 def user_interaction():
+    """метод для взаимодействия с пользователем"""
     hh = HH()
     json_saver = JSONsaver('file.json')
 
@@ -30,7 +31,8 @@ def user_interaction():
             filtered_vacancies = sorted(json_saver.get_vacancies_by_salary(salary),reverse=True)
             top_vacancies = get_top_vacancies(filtered_vacancies,n)
             for vacancy in top_vacancies:
-                print(vacancy)
+                print(f'{vacancy.title}, {vacancy.salary}')
+
         elif choice == '3':
             keyword = input("Введите ключевые слова для фильтрации вакансий: ")
             filtered_vacancies = json_saver.get_vacancies_by_keywords(keyword)

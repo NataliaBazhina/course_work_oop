@@ -3,26 +3,29 @@ import json
 from json import JSONDecodeError
 from src.vacancies import Vacancy
 import os
-from src.utils import get_top_vacancies
+
 
 class Saver(ABC):
     """Абстрактный класс для работы с файлом"""
     @abstractmethod
     def add_vacancy(self, vacancy: Vacancy):
+        """ добавляет вакансии"""
         pass
 
     @abstractmethod
     def get_vacancies_by_keywords(self, keywords):
+        """получает вакансии по ключевому слову"""
         pass
 
     @abstractmethod
     def delete_vacancy(self, title):
+        """удаляет вакансию"""
         pass
 
 class JSONsaver(Saver):
-
+    """ класс для работы с json файлом"""
     def __init__(self,file_path):
-        self.file_path = file_path
+        self.__file_path = file_path
         self.vacancies = self._load_vacancies()
 
     def add_vacancy(self, vacancy: Vacancy):
@@ -34,22 +37,22 @@ class JSONsaver(Saver):
             "description": vacancy.description,
             "requirements": vacancy.requirements
         }
-        if not os.path.exists(self.file_path):
-            with open(self.file_path, 'w', encoding="utf-8") as f:
+        if not os.path.exists(self.__file_path):
+            with open(self.__file_path, 'w', encoding="utf-8") as f:
                 json.dump([], f)
         self.vacancies.append(vac)
-        with open(self.file_path, 'w', encoding="utf-8") as f:
+        with open(self.__file_path, 'w', encoding="utf-8") as f:
             json.dump(self.vacancies, f, ensure_ascii=False, indent=4)
-        print(f"Вакансия '{vacancy.title}'добавлена")
+        print(vacancy.title)
 
 
     def delete_vacancy(self, title):
         """Удаляет вакансию с указанным заголовком из файла"""
-        if not os.path.exists(self.file_path):
+        if not os.path.exists(self.__file_path):
             print("Файл не найден.")
             return
         self.vacancies = [vacancy for vacancy in self.vacancies if vacancy["title"] != title]
-        with open(self.file_path, 'w', encoding="utf-8") as f:
+        with open(self.__file_path, 'w', encoding="utf-8") as f:
             json.dump(self.vacancies, f, ensure_ascii=False, indent=4)
         print(f"Вакансия '{title}' удалена из файла.")
 
@@ -67,6 +70,7 @@ class JSONsaver(Saver):
         return filtered_vacancies
 
     def get_vacancies_by_salary(self, salary_range):
+        """отбирает вакансии по зарплате"""
         start,stop = salary_range
         filtered_vacancies = []
         for vacancy in self.vacancies:
@@ -82,8 +86,9 @@ class JSONsaver(Saver):
 
 
     def _load_vacancies(self):
+        """загружает вакансии в файл"""
         try:
-            with open(self.file_path, 'r') as file:
+            with open(self.__file_path, 'r') as file:
                 data = json.load(file)
                 if data is not None:
                     return data
